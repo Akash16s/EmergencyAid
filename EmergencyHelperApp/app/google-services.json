@@ -1,0 +1,86 @@
+{
+  "project_info": {
+    "project_number": "782530064141",
+    "firebase_url": "https://emergencyhospital-c9f88.firebaseio.com",
+    "project_id": "emergencyhospital-c9f88",
+    "storage_bucket": "emergencyhospital-c9f88.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:782530064141:android:f33d084315a56bc6",
+        "android_client_info": {
+          "package_name": "com.akash.sky.emergencyhelper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "782530064141-ghb1pocqppo1kp1h8g625jnioh10h25d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.akash.sky.emergencyhelper",
+            "certificate_hash": "24e54b62abdec2fe806db5fdbf1d1f18bbc7df97"
+          }
+        },
+        {
+          "client_id": "782530064141-1itc63k6m7padgu1i9p3tpg826v826pu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALBSETEVd4ZtfcHeVGY5qEHp_BRCgbDWA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "782530064141-1itc63k6m7padgu1i9p3tpg826v826pu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:782530064141:android:af0caaa2205f80dd",
+        "android_client_info": {
+          "package_name": "com.skyLab.emergencyHelper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "782530064141-1itc63k6m7padgu1i9p3tpg826v826pu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALBSETEVd4ZtfcHeVGY5qEHp_BRCgbDWA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
