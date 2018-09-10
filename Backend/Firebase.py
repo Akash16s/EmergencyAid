@@ -37,12 +37,15 @@ for user in usr_loc:
     #print (slat)
     #print (slon)
     for ambu in amb_loc:
+        #print (ambu)
         if (amb_loc[ambu]['engaged'] != 1):
             elat = radians(amb_loc[ambu]['Location']['Latitude'])
             elon = radians(amb_loc[ambu]['Location']['Longitude'])
             if flag == 0:
                 minA = 6371.01 * acos(sin(slat)*sin(elat) + cos(slat)*cos(elat)*cos(slon - elon))
                 flag=1
+                amb_info = ambu
+                usr_info = user
             elif minA > 6371.01 * acos(sin(slat)*sin(elat) + cos(slat)*cos(elat)*cos(slon - elon)):
                 minA =dist = 6371.01 * acos(sin(slat)*sin(elat) + cos(slat)*cos(elat)*cos(slon - elon))
                 amb_info = ambu
@@ -55,6 +58,8 @@ for user in usr_loc:
             if flag == 0:
                 minH = 6371.01 * acos(sin(slat)*sin(elat) + cos(slat)*cos(elat)*cos(slon - elon))
                 flag=1
+                hos_info = hos
+                usr_info = user
             elif minH > 6371.01 * acos(sin(slat)*sin(elat) + cos(slat)*cos(elat)*cos(slon - elon)):
                 minH = 6371.01 * acos(sin(slat)*sin(elat) + cos(slat)*cos(elat)*cos(slon - elon))
                 hos_info = hos
@@ -62,6 +67,8 @@ for user in usr_loc:
     print (amb_info)
     print(usr_info)
     print (hos_info)
+    #path = '/Management/Ambulance/' + str(amb_info)
+    #print(path)
     firebase.patch('/Management/Ambulance/' + str(amb_info), {'engaged':1,'user':usr_info,'hospital':hos_info })
 
     print('__________updating________')
