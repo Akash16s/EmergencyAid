@@ -8,6 +8,7 @@ import android.location.LocationManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -15,12 +16,20 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
     LocationManager locationManager;
     static final int REQUEST_LOCATION=1;
     private GoogleMap mMap;
     double latti,longi;
+    DataSnapshot findAmb;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference("Management/");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +40,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mapFragment.getMapAsync(this);
         locationManager=(LocationManager)getSystemService(Context.LOCATION_SERVICE);
         getLocation();
+
+        myRef.child("Ambulance").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                findAmb=snapshot;
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
+      String amb= findAmbulance();
+
+
     }
 
 
@@ -63,6 +86,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 longi=location.getLongitude();
             }
         }
+    }
+
+    String findAmbulance(){
+       //String val= (String) findAmb.getKey();
+        return "hello";
     }
 
 }
