@@ -41,6 +41,7 @@ public class callAmb extends Activity {
         myRef.child("user1/Location/Latitude").setValue(latti,"new");
         myRef.child("user1/Location/Longitude").setValue(longi,"new");
         myRef.child("user1/Location/Name").setValue(restoredText,"new");
+        myRef.child("user1/request").setValue(1,"new");
 }
 void getLocation(){
         if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)!= PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this,Manifest.permission.ACCESS_COARSE_LOCATION)!= PackageManager.PERMISSION_GRANTED){
