@@ -49,4 +49,14 @@
         android:textSize="20dp"
         android:textColor="@color/red"
         android:text="*Call of Ambulance for no cause is a punishable offence" />
+
+    <Button
+        android:id="@+id/maps"
+        android:layout_width="wrap_content"
+        android:layout_height="77dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="130dp"
+        android:onClick="callMap"
+        android:text="Tap View Ambulance" />
 </RelativeLayout>
