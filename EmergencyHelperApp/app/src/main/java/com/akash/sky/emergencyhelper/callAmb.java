@@ -14,6 +14,7 @@ import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -23,12 +24,14 @@ public class callAmb extends Activity {
     LocationManager locationManager;
     double latti,longi;
     Button map;
+    EditText des;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("Management/Emergency");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.callamb);
+        des=(EditText) findViewById(R.id.des);
         String MY_PREFS_NAME="hello";                      //file name of shared preferences
         SharedPreferences prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
         String restoredText = prefs.getString("name", null);     //gets the value
@@ -58,5 +61,9 @@ void getLocation(){
     public void callMap(View view){
         Intent intent = new Intent(callAmb.this, MapsActivity.class);
         startActivity(intent);
+    }
+
+    public void submittheDes(View view){
+        //To be coded
     }
 }

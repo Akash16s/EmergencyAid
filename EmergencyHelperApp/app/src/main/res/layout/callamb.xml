@@ -29,12 +29,11 @@
         android:src="@drawable/location" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="246dp"
-        android:background="@color/white"
         android:gravity="center"
         android:text="Ambulance is on its way"
         android:textColor="@color/red"
@@ -56,7 +55,32 @@
         android:layout_height="77dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="130dp"
+        android:layout_marginBottom="92dp"
         android:onClick="callMap"
         android:text="Tap View Ambulance" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="250dp"
+        android:id="@+id/des"
+        android:background="@color/white"
+        android:hint="Describe the condition of patient(optional)"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_alignParentRight="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="188dp"
+        android:background="#D37878  "
+        android:id="@+id/submit"
+        android:onClick="submittheDes"
+        android:text="Submit"
+        tools:ignore="OnClick" />
 </RelativeLayout>
