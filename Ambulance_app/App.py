@@ -1,5 +1,5 @@
 from firebase import firebase
-import  googlemaps
+#import  googlemaps
 from datetime import datetime
 import webbrowser
 
@@ -24,5 +24,5 @@ for n in range(0, len(ambulance)):
         latitude = ambulance[n]["Location"]["Latitude"]
         longitude =  ambulance[n]["Location"]["Longitude"]
 
-webbrowser.open('https://maps.google.com/?q=' + str(latitude) + str(longitude), new = 2)
+webbrowser.open('https://www.google.com/maps/@' + str(latitude)+',' + str(longitude)+','+'16.25z', new = 2)
 
