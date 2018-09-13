@@ -1,7 +1,12 @@
 from firebase import firebase
+import  googlemaps
+from datetime import datetime
+import webbrowser
+
 
 firebase = firebase.FirebaseApplication('https://emergencyhospital-c9f88.firebaseio.com', None)
 result = firebase.get('/Management/Ambulance', None)
+
 
 a1 = result["A1"]
 a2 = result["A2"]
@@ -16,7 +21,8 @@ for n in range(0, len(ambulance)):
         patient = ambulance[n]["user"]
         hospital_selected = ambulance[n]["hospital"]
         location = ambulance[n]["Location"]
-print(engaged_ambulance)
-print(patient)
-print(hospital_selected)
-print(location)
+        latitude = ambulance[n]["Location"]["Latitude"]
+        longitude =  ambulance[n]["Location"]["Longitude"]
+
+webbrowser.open('https://maps.google.com/?q=' + str(latitude) + str(longitude), new = 2)
+
